@@ -15,7 +15,6 @@ public class CombatPlayerAI : MonoBehaviour
     string nameAni = "Idle";
     int randCombat = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         nowhp = maxhp;
@@ -28,7 +27,6 @@ public class CombatPlayerAI : MonoBehaviour
         nowhp = maxhp;
 
     }
-    // Update is called once per frame
     void Update()
     {
         hp.updateHp(nowhp, maxhp);
@@ -43,18 +41,15 @@ public class CombatPlayerAI : MonoBehaviour
     {
         if (other.gameObject.tag == "hitenemy")
         {
-            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0); // Lấy thông tin về layer 0
-            // Kiểm tra nếu state hiện tại có tên trùng với idleStateName
+            AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             if (stateInfo.IsName(nameAni) || animator.GetBool("block") || !animator.GetBool("block"))
             {
                 nowhp -= 0.5f;
-               // hp.updateHp(nowhp, maxhp);
                 animator.SetBool("block", true);
                 Invoke("offani", 0.5f);
             }
             else {
                 nowhp--;
-              //  hp.updateHp(nowhp, maxhp);
                 animator.SetBool("hit", true);
                 Invoke("offani", 0.5f);
 

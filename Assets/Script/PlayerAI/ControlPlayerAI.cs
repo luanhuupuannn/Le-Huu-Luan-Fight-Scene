@@ -26,15 +26,12 @@ public class ControlPlayerAI : MonoBehaviour
             if (target != null)
             {
                 ani.SetBool("walk", true);
-                // Tính toán vector di chuyển
                 Vector3 direction = (target.position - transform.position).normalized;
-                // Di chuyển đối tượng theo hướng đó với tốc độ đã đặt
                 transform.position += direction * speed * Time.deltaTime;
-                // Xoay đối tượng theo hướng di chuyển
-                if (direction != Vector3.zero) // Đảm bảo không có phép chia cho 0
+                if (direction != Vector3.zero) 
                 {
                     Quaternion lookRotation = Quaternion.LookRotation(direction);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f); // Sử dụng Slerp để xoay mượt mà
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f); 
                 }
             }
         }
@@ -54,7 +51,6 @@ public class ControlPlayerAI : MonoBehaviour
         GameObject[] players = GameObject.FindGameObjectsWithTag("Enemy");
         if (players.Length > 0)
         {
-            // Tìm Player gần nhất bằng cách so sánh khoảng cách
             target = players
                 .OrderBy(player => Vector3.Distance(transform.position, player.transform.position))
                 .FirstOrDefault()?.transform;

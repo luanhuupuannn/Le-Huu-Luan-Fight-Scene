@@ -4080,7 +4080,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2104346723}
         m_TargetAssemblyTypeName: EventBtn, Assembly-CSharp
-        m_MethodName: PlayAgain1v2
+        m_MethodName: PlayAgain2v2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5373,7 +5373,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2104346723}
         m_TargetAssemblyTypeName: EventBtn, Assembly-CSharp
-        m_MethodName: nextLevel1v2
+        m_MethodName: PlayAgain2v2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -25,7 +25,6 @@ public class CombatPlayer : MonoBehaviour
         hp.updateHp(nowhp, maxhp);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (nowhp <= 0)
@@ -79,8 +78,7 @@ public class CombatPlayer : MonoBehaviour
     {
         if (other.gameObject.tag=="hitenemy")
         {
-            AnimatorStateInfo stateInfo = ani.GetCurrentAnimatorStateInfo(0); // Lấy thông tin về layer 0
-            // Kiểm tra nếu state hiện tại có tên trùng với idleStateName
+            AnimatorStateInfo stateInfo = ani.GetCurrentAnimatorStateInfo(0); 
             if (stateInfo.IsName(nameAni)|| ani.GetBool("block")|| !ani.GetBool("block"))
             {
                 nowhp -= damein/2;

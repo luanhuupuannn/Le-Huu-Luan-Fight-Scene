@@ -82,6 +82,7 @@ public class EventBtn : MonoBehaviour
     }
     public void nextLevel1v1()
     {
+        Time.timeScale = 0;
         intLevel = PlayerPrefs.GetInt("level");
         intLevel++;
         Debug.Log(intLevel);

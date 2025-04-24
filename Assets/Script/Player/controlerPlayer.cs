@@ -5,9 +5,9 @@ using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class controlerPlayer : MonoBehaviour
 {
-    public FixedJoystick joystick; // Kéo thả Joystick UI vào đây trong Inspector
-    public float moveSpeed = 5f;// Tốc độ di chuyển của đối tượng
-    public float rotationSpeed = 10f;// Tốc độ xoay của nhân vật
+    public FixedJoystick joystick; 
+    public float moveSpeed = 5f;
+    public float rotationSpeed = 10f;
     private Rigidbody rb;
     Animator animator;
 
