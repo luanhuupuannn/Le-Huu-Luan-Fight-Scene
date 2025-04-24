@@ -119,4 +119,10 @@ public class EventBtn : MonoBehaviour
         Time.timeScale = 1;
 
     }
+    public void TestOptimizePerformance()
+    {
+        SceneManager.LoadScene(4);
+        Time.timeScale = 1;
+
+    }
 }
